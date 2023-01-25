@@ -78,5 +78,47 @@ namespace Summator.UnitTests
             Assert.That(actualResult, Is.EqualTo(expectedResult));
 
         }
+
+        [Test]
+
+        public void Test_Averege_TwoPossitiveNumbers()
+        {
+            var numbers = new int[] { 3, 7 };
+            var actialResult = Summator.Average(numbers);
+            var expectedResult = 5;
+
+            Assert.That(actialResult, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void Test_Averege_TwoNegativeNumbers()
+        {
+            var numbers = new int[] { -8, -22 };
+            var actualResult =Summator.Average(numbers);
+            var expectedResult = -15;
+
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void Test_Average_TreeNumbers()
+        {
+            var numbers = new int[] { 12, 8, 43};
+            var actualResult = Summator.Average(numbers);
+            var expectedResult = 21;
+
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+
+        public void Test_Average_WithZero()
+        {
+            var numbers = new int[] { 0,18};
+            var actualResult = Summator.Average(numbers);
+            var expectedResult = 9;
+
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
+        }
     }
 }
