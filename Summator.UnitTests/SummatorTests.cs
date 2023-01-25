@@ -1,3 +1,5 @@
+using NUnit.Framework.Constraints;
+
 namespace Summator.UnitTests
 {
     public class SummatorTests
@@ -117,6 +119,17 @@ namespace Summator.UnitTests
             var numbers = new int[] { 0,18};
             var actualResult = Summator.Average(numbers);
             var expectedResult = 9;
+
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+
+        public void Test_Average_NoNumbers()
+        {
+            var numbers = new int[] { };
+            var actualResult = Summator.Average(numbers);
+            var expectedResult = System.Double.NaN;
 
             Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
